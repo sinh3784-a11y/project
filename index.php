@@ -1,8 +1,14 @@
+
 <?php
+
+require_once __DIR__ . '/config/db.php';
+
 session_start();
+
 if (isset($_SESSION['admin_id'])) {
-    header('Location: /smart_attendance_v2/admin/dashboard.php');
-} else {
-    header('Location: /smart_attendance_v2/login.php');
+    header('Location: ' . BASE_URL . '/admin/dashboard.php');
+    exit;
 }
+
+header('Location: ' . BASE_URL . '/login.php');
 exit;

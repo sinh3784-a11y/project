@@ -1,0 +1,8 @@
+Options -Indexes
+
+<FilesMatch "(^\.env|\.sql$|\.log$|^Dockerfile$)">
+    Require all denied
+</FilesMatch>
+
+RewriteEngine On
+RewriteRule ^(config|includes)/ - [F,L]
